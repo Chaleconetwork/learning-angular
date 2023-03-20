@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-end border m-5 p-4">
+    <button class="btn btn-primary">Crear</button>
+</div>
+<div class="m-5">
+    <table class="table border text-center">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre Usuario</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Estados</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of usuarios">
+                <td>{{i.idUsuario}}</td>
+                <td>{{i.nombreUsuario}}</td>
+                <td>{{i.cargo}}</td>
+                <td>{{i.estado}}</td>
+                <td>
+                    <button class="btn btn-warning mx-4">Modificar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
