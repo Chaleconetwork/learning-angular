@@ -23,7 +23,6 @@ export class AuthComponent {
                         this.router.navigate(['usuario'])
                         localStorage.setItem('token', res.token)
                     }
-                    if (!res) { console.log('Se ha producido un error al logearse') }
                 },
                 error: (err: any) => { console.log('No se ha podido establecer una conexión con el servidor...') }
             });

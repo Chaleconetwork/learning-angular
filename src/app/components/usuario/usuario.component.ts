@@ -11,6 +11,7 @@ export class UsuarioComponent {
     usuario = new Usuario();
     usuarios: Usuario[] = [];
     url = 'Usuario';
+    validar = false;
 
     constructor(private generic: GenericService<Usuario>) { }
 
@@ -21,9 +22,7 @@ export class UsuarioComponent {
     async get() {
         this.generic.getAll(this.url)
             .subscribe({
-                next: (res: Usuario[]) => {
-                    this.usuarios = res;
-                },
+                next: (res: Usuario[]) => { this.usuarios = res, this.validar = true },
                 error: (err: any) => {
                     console.log('No se ha podido establecer una conexión con el servidor...', err)
                 }

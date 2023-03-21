@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-end border m-5 p-4">
     <button class="btn btn-primary">Crear</button>
 </div>
-<div class="m-5">
+<div *ngIf="validar; else elseBlock" class="m-5">
     <table class="table border text-center">
         <thead>
             <tr>
@@ -26,3 +26,8 @@
         </tbody>
     </table>
 </div>
+<ng-template #elseBlock>
+    <div class="m-5">
+        No hay usuarios para mostrar
+    </div>
+</ng-template>
